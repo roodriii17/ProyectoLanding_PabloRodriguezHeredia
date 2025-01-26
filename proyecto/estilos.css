@@ -1,0 +1,320 @@
+/* Fuentes e importaciones */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lobster&display=swap');
+
+/* Variables para colores y estilos */
+:root {
+    --color-principal: #7d1521; /* Rojo oscuro Granada */
+    --color-secundario: #b62020; /* Rojo Alhambra */
+    --color-dorado: #e4c77d; /* Dorado */
+    --color-fondo-claro: #ffffff; /* Fondo claro */
+    --color-texto-claro: #ffffff; /* Blanco claro */
+    --color-texto-oscuro: #000000; /* Texto oscuro */
+    --color-rojo: #5a1018; /* Rojo más intenso */
+}
+
+/* Estilo global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Lobster', cursive;
+    color: var(--color-secundario);
+}
+
+/* Navbar fija */
+.navbar {
+    background-color: var(--color-principal);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-dorado);
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: var(--color-texto-claro);
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    margin: 0 10px;
+    color: var(--color-texto-claro);
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-dorado);
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    color: var(--color-texto-claro);
+    padding: 100px 0;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-dorado);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: var(--color-texto-claro);
+}
+
+.carousel-caption .btn {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.carousel-caption .btn:hover {
+    background-color: var(--color-rojo);
+}
+
+/* Sección Historia */
+#about {
+    background-color: var(--color-principal); /* Fondo rojo oscuro como la navbar */
+    color: var(--color-texto-claro); 
+    padding: 60px 20px;
+    border-top: 4px solid var(--color-dorado); /* Línea decorativa dorada */
+    border-bottom: 4px solid var(--color-dorado);
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-dorado); /* Título en dorado */
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: var(--color-texto-claro); /* Texto claro */
+}
+
+#about i {
+    color: var(--color-dorado); /* Iconos en dorado */
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Estilo de Maravillas de la Alhambra */
+#features h2 {
+    color: var(--color-principal); /* Título en rojo oscuro */
+}
+
+#features .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#features .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#features .btn {
+    background-color: var(--color-principal); /* Botón en rojo oscuro */
+    color: var(--color-texto-claro); /* Texto claro */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#features .btn:hover {
+    background-color: var(--color-rojo); /* Rojo más intenso */
+    transform: scale(1.1);
+}
+
+/* Texto de la descripción */
+#features .card-text {
+    font-size: 1rem;
+    color: var(--color-texto-oscuro);
+}
+
+.collapse {
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Imagen */
+#about .img-fluid {
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #about .row {
+        flex-direction: column;
+    }
+
+    #about .col-lg-6 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Secciones generales */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secundario);
+    margin: 10px auto 0;
+}
+
+/* Maravillas de la Alhambra */
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: var(--color-secundario);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: var(--color-rojo);
+}
+
+/* Galería de imágenes */
+#gallery img {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+#gallery img:hover {
+    transform: scale(1.1) rotate(2deg); /* Aumento de escala con rotación suave */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar la imagen */
+}
+
+/* Sección Visítanos */
+#contact {
+    background-color: var(--color-principal); /* Color rojo oscuro de la navbar */
+    color: var(--color-texto-claro); /* Texto blanco claro */
+    padding: 60px 20px;
+    border-top: 4px solid var(--color-dorado); /* Línea decorativa dorada */
+    border-bottom: 4px solid var(--color-dorado);
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-dorado); /* Título dorado */
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.contact-info i {
+    color: var(--color-dorado); /* Iconos dorados */
+    margin-right: 10px;
+}
+
+/* Botón de contacto */
+#contact .btn-light {
+    margin-top: 20px;
+    background-color: var(--color-dorado); /* Fondo dorado */
+    color: var(--color-principal); /* Texto rojo oscuro */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+#contact .btn-light:hover {
+    background-color: var(--color-fondo-claro); /* Fondo blanco claro */
+    color: var(--color-principal); /* Texto rojo oscuro */
+    border: 1px solid var(--color-dorado); /* Borde dorado */
+}
+
+/* Footer */
+footer.footer {
+    background-color: var(--color-principal); /* Fondo rojo oscuro */
+    color: var(--color-texto-claro); /* Texto blanco claro */
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid var(--color-dorado); /* Línea dorada */
+}
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    color: var(--color-texto-claro); /* Iconos blancos */
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+    color: var(--color-dorado); /* Iconos dorados al pasar el cursor */
+}
+
+footer p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--color-texto-claro); /* Texto blanco claro */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
